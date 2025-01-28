@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/dist/HTML files/styleCss/style.css">
+    <title>Cart</title>
+</head>
+<body class="showCart">
+    <div class="container">
+        <header class="flex justify-between items-center px-10 mb-10 shadow-md shadow-cyan-400 text-gray-100 bg-blue-500 py-5 relative">
+            <h1 class="font-mono text-lg">LIST PRODUCT</h1>
+            <div class="iconCart">
+                <i class="bi bi-cart-plus relative text-5xl cursor-pointer" onclick="openSideBar()"></i>
+                <div class="totalQuantity absolute top-2 right-6 text-lg bg-red-600 px-3 rounded-full">0</div>
+            </div>
+        </header>
+    
+        <!-- Items -->
+        <div class="listProducts px-20 lg:grid lg:grid-cols-3  gap-5 lg:ml-10 mb-10" id="listPd">
+            <div class="item  bg-indigo-300 lg:w-72 rounded-lg shadow-md hover:shadow-lg mb-5 lg:mb-0 group">
+                <img src="images/HE4.jpeg" alt="" class="rounded-t-lg lg:h-72 w-full">
+                <div class="px-5 text-gray-100 text-right">
+                    <h2 class="text-lg font-medium">Product Name</h2>
+                    <div class="font-semibold mb-2 price">$50</div>
+                    <button class="bg-orange-400 px-2 py-1 rounded-lg font-semibold mb-3 hover:bg-gray-100 hover:text-orange-400 transition-all addCart" >Add To Cart</button>
+                </div>
+            </div>
+    
+            <div class="item bg-indigo-300 lg:w-72 rounded-lg shadow-md hover:shadow-lg mb-5 lg:mb-0">
+                <img src="images/laptop6.jpeg" alt="" class="rounded-t-lg lg:h-72 w-full">
+                <div class="px-5 text-gray-100 text-right">
+                    <h2 class="text-lg font-medium">Product Name</h2>
+                    <div class="font-semibold mb-2">$50</div>
+                    <button class="bg-orange-400 px-2 py-1 rounded-lg font-semibold mb-3 hover:bg-gray-100 hover:text-orange-400 transition-all addCart">Add To Cart</button>
+                </div>
+            </div>
+    
+            <div class="item bg-indigo-300 lg:w-72 rounded-lg shadow-md hover:shadow-lg mb-5 lg:mb-0">
+                <img src="images/CanonRF.jpeg" alt="" class="rounded-t-lg lg:h-72 w-full">
+                <div class="px-5 text-gray-100 text-right">
+                    <h2 class="text-lg font-medium">Product Name</h2>
+                    <div class="font-semibold mb-2">$50</div>
+                    <button class="bg-orange-400 px-2 py-1 rounded-lg font-semibold mb-3 hover:bg-gray-100 hover:text-orange-400 transition-all addCart">Add To Cart</button>
+                </div>
+            </div>
+    
+            <div class="item bg-indigo-300 lg:w-72 rounded-lg shadow-md hover:shadow-lg mb-5 lg:mb-0">
+                <img src="images/PHONE22.jpeg" alt="" class="rounded-t-lg lg:h-72 w-full">
+                <div class="px-5 text-gray-100 text-right">
+                    <h2 class="text-lg font-medium">Product Name</h2>
+                    <div class="font-semibold mb-2">$50</div>
+                    <button class="bg-orange-400 px-2 py-1 rounded-lg font-semibold mb-3 hover:bg-gray-100 hover:text-orange-400 transition-all addCart">Add To Cart</button>
+                </div>
+            </div>
+    
+            <div class="item bg-indigo-300 lg:w-72 rounded-lg shadow-md hover:shadow-lg mb-5 lg:mb-0">
+                <img src="images/phone9.jpeg" alt="" class="rounded-t-lg lg:h-72 w-full">
+                <div class="px-5 text-gray-100 text-right">
+                    <h2 class="text-lg font-medium">Product Name</h2>
+                    <div class="font-semibold mb-2">$50</div>
+                    <button class="bg-orange-400 px-2 py-1 rounded-lg font-semibold mb-3 hover:bg-gray-100 hover:text-orange-400 transition-all addCart">Add To Cart</button>
+                </div>
+            </div>
+    
+            <div class="item bg-indigo-300 lg:w-72 rounded-lg shadow-md hover:shadow-lg mb-5 lg:mb-0">
+                <img src="images/camera3.jpeg" alt="" class="rounded-t-lg lg:h-72 w-full object-fill">
+                <div class="px-5 text-gray-100 text-right">
+                    <h2 class="text-lg font-medium">Product Name</h2>
+                    <div class="font-semibold mb-2">$50</div>
+                    <button class="bg-orange-400 px-2 py-1 rounded-lg font-semibold mb-3 hover:bg-gray-100 hover:text-orange-400 transition-all addCart">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- SideBar -->
+        <aside class="sidebar bg-gray-800 text-gray-100 fixed top-0 bottom-0 right-0 flex flex-col justify-between duration-300 w-96 px-5 py-3  ">
+            <div class="cartTab">
+                <h2 class="mb-5 text-center text-yellow-600 text-lg font-semibold">CART</h2>
+                <div class="flex flex-col gap-3 listCart">
+                    <div class="item flex w-full">
+                        <img src="images/watch2.png" alt="" class="w-24 h-16 object-fill">
+                        <div>
+                            <div class="name">Product Name</div>
+                            <div class="totalPrice">$45.00</div>
+                        </div>
+                        <div class="px-2 flex items-center">
+                            <div class="bg-gray-300 flex items-center gap-3  px-2 rounded-md">
+                                <span class="plus text-gray-700 text-lg cursor-pointer ">+</span>
+                                <span>0</span>
+                                <span class="minus text-gray-700 text-lg cursor-pointer ">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <button class="closeBtn bg-slate-700 py-2 rounded-lg text-xl font-semibold w-full hover:bg-slate-600">CLOSE</button>
+    
+                <button class="close bg-yellow-400 hover:bg-yellow-500 px-4 py-2 rounded-lg text-xl font-semibold w-full checkOut">CHECKOUT</button>
+            </div>
+        </aside>
+    
+         <script>
+            function openSideBar(){
+                document.querySelector('.sidebar').classList.toggle('right-[360px]');
+            }
+            // function openSideBar(){
+            //     document.querySelector('.sidebar').classList.toggle('translate-x-0')
+            // }
+            
+         </script>
+    </div>
+    <script src="/dist/HTML files/Js files/cartalog.js"></script>
+</body>
+</html>

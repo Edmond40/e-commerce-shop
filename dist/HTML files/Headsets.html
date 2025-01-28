@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/output.css">
+    <title>Headsets</title>
+</head>
+<body class="bg-slate-200 dark:bg-gray-800 transition ease-in-out">
+    <header class="flex fixed z-10 duration-300 justify-between items-center px-5 py-4 h-30 border-b shadow-md bg-gray-100 dark:bg-gray-700 dark:shadow-neon ">
+        <a href="index.html">
+            <h1 class="text-3xl font-bold text-gray-700 flex dark:text-gray-100"> 📱iCaly</h1>
+        </a>
+        
+        <nav class="px-5 text-center text-m text-gray-600 dark:text-gray-100">
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Phones</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Headphones</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Router Wifi</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Chargers</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Power Banks</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Digital Cameras</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Hard Drives</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Series Watches</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Bluetooth Speaker</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Flash Drives</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Tablets</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Memory Cards</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Phones Covers</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Cables</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Laptops</a>
+        </nav>
+        <div class="flex space-x-6 items-center  md:flex">
+            <a href="#" class="font-bold text-2xl text-gray-700 dark:text-gray-200"><i class="bi-cart-plus"></i></a> 
+            <a href="#" class="lg:flex sm:hidden openprofile">
+                <img src="images/Drone1.jpeg" class="box1 rounded-full object-fill" width="80"  alt="">
+            </a>
+        </div>  
+        
+        <div class="flex items-center"></div>
+            <div class="flex items-center">
+               <input type="checkbox" id="toggle" class="hidden">
+                <label for="toggle" class="cursor-pointer">
+                    <div class="w-9 h-5 flex items-center bg-gray-200 shadow-md rounded-full p-1 m-2 dark:bg-gray-600">
+                    <div class="toggle-dot w-4 h-4 rounded-full bg-gray-100 shadow-md transform duration-500 ease-in-out"></div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- DarkMode -->
+    <script>
+        const checkbox = document.querySelector('#toggle')
+        const html = document.querySelector('html');
+
+        const toggleDarkMode = function(){
+            checkbox.checked
+            ? html.classList.add("dark")
+            : html.classList.remove("dark");
+        }
+
+        toggleDarkMode();
+        checkbox.addEventListener("click", toggleDarkMode);
+     </script>
+
+    <script src="app.js"></script>
+</body>
+</html>

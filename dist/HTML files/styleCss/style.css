@@ -1,0 +1,18 @@
+.listProducts{
+    transition: .5s;
+    
+}
+
+.sidebar{
+    inset: 0 0 0 auto;
+    transition: .5s;
+    
+}
+
+body.showCart .sidebar{
+    inset: 0 -400px 0 auto;
+}
+
+/* body.showCart .listProducts{ 
+    transform: translateX(-250px);
+} */

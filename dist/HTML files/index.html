@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/dist/style.css">
+    <link rel="stylesheet" href="/src/output.css">
+    <title>iCarly Tech Hub</title>
+
+    <style>
+        @keyframes appear{
+            from {
+                opacity: 0;
+                scale: 0.5;
+            }
+            to{
+                opacity: 1;
+                scale: 1;
+            }
+        }
+
+        .anim{
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+    </style>
+</head>
+<body class="bg-slate-300 dark:bg-gray-800 dark:text-gray-800 transition ease-in-out " > 
+    <!-- Header -->
+    <header class="flex justify-between items-center h-16 lg:px-10 px-5 bg-gray-100 relative dark:bg-gray-700 dark:shadow-neon shadow-md">
+        <h1 class="lg:text-3xl font-bold text-gray-700 dark:text-gray-100"> 📱iCaly</h1>
+        <nav class="space-x-5 hidden md:block lg:ml-20 text-xl">
+             <a href="#" class="font-semibold text-gray-800 hover:transition hover:bg-blue-400 hover:rounded-lg hover:text-gray-200 p-2 dark:text-gray-100">Home</a>
+             <a href="#" class="font-semibold text-gray-800 hover:transition hover:bg-blue-400 hover:rounded-lg hover:text-gray-200 p-2 dark:text-gray-100">Service</a>
+             <a href="#" class="font-semibold text-gray-800 hover:transition hover:bg-blue-400 hover:rounded-lg hover:text-gray-200 p-2 dark:text-gray-100">About
+                 <i class="bi bi-chevron-down" onclick="openBtn()"></i>
+             </a>
+             <div class="dropdown absolute scale-0 left-[47%] mt-5 bg-blue-400 transition delay-75 px-10 py-2dark:text-gray-100 dark:bg-gray-800" >
+                 <ul class="space-y-2">
+                     <li class="text-gray-200 dark:text-gray-100 font-semibold"><a href="#">Team1</a></li>
+                     <li class="text-gray-200 dark:text-gray-100 font-semibold"><a href="#">Team1</a></li>
+                     <li class="text-gray-200 dark:text-gray-100 font-semibold"><a href="#">Team1</a></li>
+                     <li class="text-gray-200 dark:text-gray-100 font-semibold"><a href="#">Team1</a></li>
+                 </ul>
+             </div>
+             <script type="text/javascript">
+                 function openBtn(){
+                     document.querySelector('.dropdown').classList.toggle('scale-[20px]')
+                 }
+             </script>
+             <a href="#" class="font-semibold text-gray-800 hover:transition hover:bg-blue-400 hover:rounded-lg hover:text-gray-200 p-2 dark:text-gray-100">Contact</a>  
+        </nav>  
+
+        <div class="flex space-x-10 items-center hidden md:flex lg:-mr-40">
+             <a href="cartt.html" class="font-bold text-2xl dark:text-gray-100"><i class="bi-cart-plus"></i></a> 
+             <a href="#">
+                 <img src="images/Drone1.jpeg" class=" rounded-full object-fill" width="45"  alt="" onclick="openprofile()">
+             </a>
+             <div class="profile absolute scale-0 right-28 top-[100%] bg-blue-400 transition delay-75 px-10 py-2 dark:bg-gray-800">
+                 <ul class="space-y-2">
+                     <li class="text-gray-200 font-semibold"><a href="#">Team1</a></li>
+                     <li class="text-gray-200 font-semibold"><a href="#">Team1</a></li>
+                     <li class="text-gray-200 font-semibold"><a href="#">Team1</a></li>
+                     <li class="text-gray-200 font-semibold"><a href="#">Team1</a></li>
+                 </ul>
+            </div>
+             <script type="text/javascript">
+                 function openprofile(){
+                     document.querySelector('.profile').classList.toggle('scale-[20px]')
+                 }
+             </script>
+        </div>
+        <i class="bi bi-list text-3xl md:hidden hover:cursor-pointer -ml-[-50%]" onclick="openSidebar()"></i>
+ 
+        <!-- SideBar -->
+        <div class="sidebar bg-gray-200 right-[-300px] px-10 py-10 top-0 fixed bottom-0 md:hidden w-[280px] h-auto transition-all z-10 dark:bg-gray-800 dark:text-gray-200 duration-500">
+                <i class="bi bi-x-lg text-xl lg:hidden  hover:cursor-pointer " id="closeSidebar" onclick="closeSidebar()"></i>
+                <h1 class="text-3xl font-bold text-gray-700 mt-10 mb-5 dark:text-gray-200"  onclick="navClose()"> 📱iCaly</h1>
+             <nav class="h-[77%]">
+                 <ul class="space-y-4">
+                     <li>
+                         <a href="#" class="font-semibold text-gray-700 hover:transition hover:bg-blue-400 hover:rounded-lg hover:text-gray-200 p-2  dark:text-gray-200" onclick="navClose()">Home</a>
+                     </li>
+                     <li>
+                         <a href="#" class="font-semibold text-gray-700 hover:transition hover:bg-blue-400 hover:rounded-lg hover:text-gray-200 p-2  dark:text-gray-200" onclick="navClose()">Service</a>
+                     </li>
+                     <li>
+                         <a href="#" class="font-semibold text-gray-700 hover:transition hover:bg-blue-400 hover:rounded-lg hover:text-gray-200 p-2  dark:text-gray-200" onclick="navClose()">About
+                             <i class="bi bi-chevron-down rotate-180" onclick="openBtn()"></i>
+                         </a>
+                     </li>
+                     
+                 </ul>
+                 
+                 <script type="text/javascript">
+                     function openBtn(){
+                         document.querySelector('.dropdown').classList.toggle('scale-[1px]')
+                     }
+     
+                     function openSidebar(){
+                         document.querySelector('.sidebar').classList.toggle('right-[1px]')
+                     }
+                     function closeSidebar(){
+                         document.querySelector('.sidebar').classList.toggle('right-[1px]')
+                     }
+                     function navClose(){
+                         document.querySelector('.sidebar').classList.toggle('right-[1px]')
+                     }
+                     
+                 </script>
+                 <a href="#" class="font-semibold text-gray-700 hover:transition hover:bg-blue-400 hover:rounded-lg hover:text-gray-200 p-2  dark:text-gray-200" onclick="navClose()">Contact</a>
+             </nav>
+             <div class="flex justify-between space-x-10 items-center  lg:flex px-10">
+                 <a href="#" class="font-bold text-2xl dark:text-gray-200"><i class="bi-cart-plus" onclick="navClose()"></i></a> 
+                 <a href="#">
+                     <img src="images/Drone1.jpeg" class=" rounded-full object-fill" width="45"  alt="" onclick="openprofile()" onclick="navClose()">
+                 </a>
+                 <div class="profile absolute scale-0 right-2 top-[100%] bg-blue-400 transition delay-75 px-10 py-2">
+                     <ul class="space-y-2">
+                         <li class="text-gray-200 font-semibold" onclick="navClose()"><a href="#">Team1</a></li>
+                         <li class="text-gray-200 font-semibold" onclick="navClose()"><a href="#">Team1</a></li>
+                         <li class="text-gray-200 font-semibold" onclick="navClose()"><a href="#">Team1</a></li>
+                         <li class="text-gray-200 font-semibold" onclick="navClose()"><a href="#">Team1</a></li>
+                     </ul>
+                 </div>
+                 <script type="text/javascript">
+                     function openprofile(){
+                         document.querySelector('.profile').classList.toggle('scale-[20px]')
+                     }
+                 </script>
+             </div>
+             </div>
+         </div>
+        <!--DarkMode  -->
+        <div class="flex items-center">
+            <div class="flex items-center">
+               <input type="checkbox" id="toggle" class="hidden">
+                <label for="toggle" class="cursor-pointer">
+                    <div class="w-9 h-5 flex items-center bg-gray-300 shadow-md rounded-full p-1 m-2 dark:bg-gray-600">
+                    <div class="toggle-dot w-4 h-4 rounded-full bg-gray-100 shadow-lg transform duration-500 ease-in-out"></div>
+                    </div>
+                </label>
+          
+            </div>
+        </div>
+    </header>
+ 
+     <!-- Content -->
+    <section class="flex flex-2 " id="block"> 
+         <!-- sidebar -->
+        <div class=" bg-blue-500 md:w-[40%] w-[15%] mr-3 dark:bg-gray-700 shadow-md">
+            <div class="flex items-center md:px-5 mb-4 text-gray-100 cursor-pointer mt-5 hover:bg-blue-300 py-2 dark:hover:bg-gray-600">
+                 <a href="#" class="flex items-center">
+                     <i class="bi bi-phone px-5 text-2xl "></i>
+                     <p class="hidden lg:block">Phones</p>
+                 </a>
+             </div>
+         <div class="flex items-center mb-4 text-gray-100 md:px-5 cursor-pointer mt-5 hover:bg-blue-300 py-2 dark:hover:bg-gray-600">
+             <a href="#" class="flex items-center">
+                 <i class="bi bi-headset px-5 text-2xl"></i>
+                 <p class="hidden lg:block">Headphones</p>
+             </a>
+         </div>
+         <div class="flex items-center mb-4 text-gray-100 md:px-5 cursor-pointer mt-5 hover:bg-blue-300 py-2 dark:hover:bg-gray-600">
+            <a href="#" class="flex items-center">
+             <i class="bi bi-router px-5 text-2xl"></i>
+             <p class="hidden lg:block">Router Wifi</p>
+            </a>
+         </div>
+         <div class="flex items-center mb-4 text-gray-100 md:px-5 cursor-pointer mt-5 hover:bg-blue-300 py-2 dark:hover:bg-gray-600">
+             <a href="#" class="flex items-center">
+                 <i class="bi bi-hdmi px-5 text-2xl"></i>
+                 <p class="hidden lg:block">Chargers</p>
+             </a>
+         </div>
+         <div class="flex items-center mb-4 text-gray-100 md:px-5 cursor-pointer mt-5 hover:bg-blue-300 py-2 dark:hover:bg-gray-600">
+             <a href="#" class="flex items-center">
+                 <i class="bi bi-battery-charging px-5 text-2xl"></i>
+                 <p class="hidden lg:block">Power Banks</p>
+             </a>
+         </div>
+         <div class="flex items-center mb-4 text-gray-100 md:px-5 cursor-pointer mt-5 hover:bg-blue-300 py-2 dark:hover:bg-gray-600">
+            <a href="camera.html" class="flex items-center">
+             <i class="bi bi-camera2 px-5 text-2xl"></i>
+             <p class="hidden lg:block">Digital Cameras</p>
+            </a>
+         </div>
+         <div class="flex items-center mb-4 text-gray-100 md:px-5 cursor-pointer mt-5 hover:bg-blue-300 py-2 dark:hover:bg-gray-600">
+             <a href="#" class="flex items-center">
+                 <i class="bi bi-device-ssd px-5 text-2xl"></i>
+                 <p class="hidden lg:block">Hard Drives</p>
+             </a>
+         </div>
+         <div class="flex items-center mb-4 text-gray-100 md:px-5 cursor-pointer mt-5 hover:bg-blue-300 py-2 dark:hover:bg-gray-600">
+             <a href="#" class="flex items-center">
+                 <i class="bi bi-smartwatch px-5 text-2xl"></i>
+                 <p class="hidden lg:block">Series Watches</p>
+             </a>
+         </div>
+         <div class="flex items-center mb-4 text-gray-100 md:px-5 cursor-pointer mt-5 hover:bg-blue-300 py-2 dark:hover:bg-gray-600">
+             <a href="#" class="flex items-center">
+                 <i class="bi bi-speaker px-5 text-2xl"></i>
+                 <p class="hidden lg:block">Bluetooth Speaker </p>
+             </a>
+         </div>
+         <div class="flex items-center mb-4 text-gray-100 md:px-5 cursor-pointer mt-5 hover:bg-blue-300 py-2 dark:hover:bg-gray-600">
+             <a href="#" class="flex items-center">
+                 <i class="bi bi-usb-drive px-5 text-2xl"></i>
+                 <p class="hidden lg:block">Flash Drives</p>
+             </a>
+         </div>
+         <div class="flex items-center mb-4 text-gray-100 md:px-5 cursor-pointer mt-5 hover:bg-blue-300 py-2 dark:hover:bg-gray-600">
+             <a href="#" class="flex items-center">
+                 <i class="bi bi-tablet px-5 text-2xl"></i>
+                 <p class="hidden lg:block">Tablet</p>
+             </a>
+         </div>
+        </div>
+ 
+         <!-- Products -->
+        <div class="mb-5">
+             <div class="">
+                 <img src="images/phonebb.avif"alt="" width="100%" class="rounded-b-lg ">
+                 <div class="lg:absolute md:top-40 -mt-20 lg:mt-10 md:-mt-[20%] mb-20 lg:-mb-20 lg:left-[40%] left-[20%] px-5 lg:text-indigo-200 lg:text-center  dark:text-gray-100">
+                     <p class="md:text-5xl lg:text-6xl text-xl font-bold lg:mb-5 text-white">WELCOME TO <span class="ring-4 px-2 py-1 ring-inset ring-blue-500 p-1 rounded-lg">iCaly</span></p>
+                     <span class="md:text-xl font-medium text-white">A place of quality products at low rate</span>
+                 </div>
+             </div>
+
+            <!-- ProductList -->
+            <div class="px-3 mt-5 anim">
+                 <h2 class="text-3xl text-center font-bold text-gray-700 dark:text-gray-100 mb-5">Products</h2>
+                 <div class="sm:grid grid-cols-3 gap-5 space-y-5 xl:px-10">
+                 <!-- Product -->
+                 <div class="sm:px-20 md:px-0 border mt-5 rounded-lg shadow-md hover:shadow-lg dark:hover:shadow-purlpe bg-gray-200 dark:bg-gray-800">
+                     <img src="images/drone1.jpeg" class="md:object-cover object-fill rounded-t-lg w-full h-60" alt="">
+                     <div class="px-5 mb-5">
+                         <h3 class="text-xl font-semibold text-gray-800 mt-3 dark:text-gray-100">Drone</h3>
+                         <p class="text-gray-600 text-sm mb-2 dark:text-gray-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                         <a href="#">
+                             <button class="bg-blue-400 text-gray-100 rounded-lg px-5 py-2 hover:bg-transparent hover:text-gray-500 transition hover:font-medium dark:hover:text-gray-100">Buy Now
+                             </button>
+                         </a>
+                     </div>
+                 </div>        
+                 <!-- Product -->
+             <div class="border  rounded-lg shadow-md hover:shadow-lg dark:hover:shadow-purlpe bg-gray-200 dark:bg-gray-800">
+                 <img src="images/camera3.jpeg" class="md:object-cover object-fill rounded-t-lg w-full h-60" alt="">
+                 <div class="px-5 mb-5">
+                     <h3 class="text-xl font-semibold text-gray-800 mt-3 dark:text-gray-100">Digital Camera</h3>
+                     <p class="text-gray-600 text-sm mb-2 dark:text-gray-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                     <a href="#">
+                         <button class="bg-blue-400 text-gray-100 rounded-lg px-5 py-2 hover:bg-transparent hover:text-gray-500 transition hover:font-medium dark:hover:text-gray-100">Buy Now
+                         </button>
+                     </a>
+                 </div>
+             </div>
+             <div class="border bg-gray-200 rounded-lg shadow-md hover:shadow-lg dark:hover:shadow-purlpe dark:bg-gray-800">
+                 <img src="images/laptop3.jpeg" class="md:object-cover object-fill w-full h-60 rounded-t-lg" alt="">
+                 <div class="px-5 mb-5">
+                     <h3 class="text-xl font-semibold text-gray-800 mt-3 dark:text-gray-100">HP Elite PC</h3>
+                     <p class="text-gray-600 text-sm mb-2 dark:text-gray-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                     <a href="#">
+                         <button class="bg-blue-400 text-gray-100 rounded-lg px-5 py-2 hover:bg-transparent hover:text-gray-500 transition hover:font-medium dark:hover:text-gray-100">Buy Now
+                         </button>
+                     </a>
+                 </div>
+             </div>    
+             <div class="border bg-gray-200 rounded-lg shadow-md hover:shadow-lg dark:hover:shadow-purlpe dark:bg-gray-800">
+                 <img src="images/phone9.jpeg" class="md:object-cover object-fill w-full h-60 rounded-t-lg" alt="">
+                 <div class="px-5 mb-5">
+                     <h3 class="text-xl font-semibold text-gray-800 mt-3 dark:text-gray-100">SAMSUNG GALAXY ULTRA 3</h3>
+                     <p class="text-gray-600 text-sm mb-2 dark:text-gray-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                     <a href="#">
+                         <button class="bg-blue-400 text-gray-100 rounded-lg px-5 py-2 hover:bg-transparent hover:text-gray-500 transition hover:font-medium dark:hover:text-gray-100">Buy Now
+                         </button>
+                     </a>
+                 </div>
+             </div>    
+             <div class="border bg-gray-200 rounded-lg shadow-md hover:shadow-lg dark:hover:shadow-purlpe dark:bg-gray-800">
+                 <img src="images/phone1.jpeg" class="md:object-cover object-fill w-full h-60 rounded-t-lg" alt="">
+                 <div class="px-5 mb-5">
+                     <h3 class="text-xl font-semibold text-gray-800 mt-3 dark:text-gray-100">SAMSUNG GALAXY ULTRA</h3>
+                     <p class="text-gray-600 text-sm mb-2 dark:text-gray-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                     <a href="#">
+                         <button class="bg-blue-400 text-gray-100 rounded-lg px-5 py-2 hover:bg-transparent hover:text-gray-500 transition hover:font-medium dark:hover:text-gray-100">Buy Now
+                         </button>
+                     </a>
+                 </div>
+             </div>    
+             <div class="border bg-gray-200 rounded-lg shadow-md hover:shadow-lg dark:hover:shadow-purlpe dark:bg-gray-800">
+                 <img src="images/IPHONE.jpeg" class="md:object-cover object-fill w-full h-60 rounded-t-lg" alt="">
+                 <div class="px-5 mb-5">
+                     <h3 class="text-xl font-semibold text-gray-800 mt-3 dark:text-gray-100">IPNONE 13 PRO</h3>
+                     <p class="text-gray-600 text-sm mb-2 dark:text-gray-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                     <a href="#">
+                         <button class="bg-blue-400 text-gray-100 rounded-lg px-5 py-2 hover:bg-transparent hover:text-gray-500 transition hover:font-medium dark:hover:text-gray-100">Buy Now
+                         </button>
+                     </a>
+                 </div>
+             </div>    
+             </div>    
+        </div>
+     
+         <!-- Promo -->
+        <section class="mt-10 px-3 anim">
+             <div>
+                 <img src="images/Annoucement.jpeg" alt="" width="100%" class="rounded-lg">
+             </div>
+ 
+            <div class="mt-5 anim">
+                 <h2 class="text-3xl text-center font-bold text-gray-700 mb-5 dark:text-gray-100 ">Special Promotion</h2>
+                 <div class="flex justify-center items-center">
+                     <a href="#">
+                         <button class="bg-blue-400 text-gray-100 px-5 py-2 rounded-lg hover:bg-transparent hover:text-gray-600 transition hover:font-medium dark:hover:text-gray-100">Buy Now
+                         </button>
+                     </a>
+                 </div>
+            </div>
+             
+             <!-- Slider main container -->
+            <div class="swiper anim mt-10">
+                <!-- Additional required wrapper -->
+                <div class="swiper mySwiper md:w-[650px] w-[250px] lg:h-80 h-40  md:h-[360px] rounded-lg">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/laptop3.jpeg" alt="" class="object-cover" ></div>
+                        <div class="swiper-slide"><img src="images/camera3.jpeg" alt=""  class="object-cover"></div>
+                        <div class="swiper-slide"><img src="images/download (2).jpeg" alt="" class="object-fill"></div>
+                        <div class="swiper-slide"><img src="images/HE3.jpeg" alt="" class="object-cover" ></div>
+                        <div class="swiper-slide"><img src="images/247.jpeg" alt="" ></div>
+                        <div class="swiper-slide"><img src="images/phone7.jpeg" alt=""  class="object-cover"></div>
+                        <div class="swiper-slide"><img src="images/PHONE22.jpeg" alt="" class="object-cover"></div>
+                        <div class="swiper-slide"><img src="images/glas.jpeg" alt=""  class="object-cover"></div>
+                        <div class="swiper-slide"><img src="images/HE1.jpeg" alt="" class="object-cover "></div>
+                    </div>
+                </div>    
+            </div>
+        </section> 
+ 
+         <!-- Discount -->
+        <div class="px-5 anim">
+             <div class="mt-10 lg:mb-5 md:px-8 -m-3 ring rounded-lg dark:shadow-neon">
+                 <div class="flex justify-between items-center py-3 px-1">
+                     <div class="md:flex items-center gap-3 md:p-4 text-center md:text-left ">
+                         <i class="bi bi-patch-check flex items-center justify-center text-2xl dark:text-gray-100"></i>
+                         <div class="">
+                             <h2 class="md:text-lg text-sm font-semibold text-gray-700 dark:text-gray-100">Money Guarantee</h2>
+                             <p class="text-sm text-gray-600  dark:text-gray-100">3D Day Money Back</p>
+                         </div>
+                     </div>
+                     <div class="md:flex items-center gap-3 md:p-4 text-center md:text-left">
+                         <i class="bi bi-wallet2 flex items-center justify-center text-2xl dark:text-gray-100"></i>
+                         <div>
+                             <h2 class="md:text-lg text-sm font-semibold text-gray-700 dark:text-gray-100">Secure Payment</h2>
+                             <p class="text-sm text-gray-600 dark:text-gray-100">All Cards Accepted</p>
+                         </div>
+                     </div>
+                     <div class="md:flex items-center gap-3 md:p-4 text-center md:text-left">
+                         <i class="bi bi-headset flex items-center justify-center text-2xl dark:text-gray-100"></i>
+                         <div>
+                             <h2 class="md:text-lg text-sm font-semibold text-gray-700 dark:text-gray-100">24/7 Online Service</h2>
+                             <p class="text-sm text-gray-600 dark:text-gray-100">Technincal Support 24/7</p>
+                         </div>
+                     </div>
+                     <div class="md:flex text-center md:text-left gap-3 md:p-4">
+                         <i class="bi bi-truck flex items-center justify-center text-2xl dark:text-gray-100"></i>
+                         <div>
+                             <h2 class="md:text-lg text-sm font-semibold text-gray-700 dark:text-gray-100">Free Shipping</h2>
+                             <p class="text-sm text-gray-600 dark:text-gray-100">Free Shipping On All Order</p>
+                         </div>
+                     </div>
+                 </div>
+              </div>
+        </div>
+ 
+          <!-- Advert  -->       
+         <div class="mr-3 mt-40 bg-red-500 dark:bg-red-800 rounded-lg mb-20 text-center lg:text-left lg:relative anim">
+             <div class="lg:justify-between lg:items-center md:p-5 lg:px-10 py-3 flex-col">
+                 <div class="lg:flex">
+                     <div class="text-gray-300 space-y-2 md:space-y-1 px-2 md:px-0">
+                         <h2>20% OFF</h2>
+                         <p class="px-5 lg:text-8xl text-xl font-bold text-gray-100">FINE <br>SMILE</p>
+                         <h2>15 Nov To 7 Dec</h2>
+                      </div>
+                     <div class="flex justify-center">
+                         <img src="images/head2.png" alt="" width="400px" class="image lg:absolute lg:left-[30%]  lg:top-[-50%]">
+                     </div>
+                     <div class=" text-gray-200 lg:ml-[35%] md:space-y-2 mt-5 md:mt-0 md:mb-0 mb-5 ">
+                         <p>Beats Solo Air</p>
+                         <h2 class="md:text-5xl text-xl text-gray-100 font-bold">Summer Sale</h2>
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, quo.</p>
+                         <button class="mt-2 md:mt-0 rounded-full text-red-500 font-semibold bg-gray-100 px-3 py-1 hover:bg-red-400 transition hover:text-gray-100">Shop</button>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         
+         <!-- Items -->
+         <div class="px-5 lg:px-0 anim">
+             <div class="text-center space-y-2 mb-10">
+                 <h2 class="text-xl font-bold text-gray-700 dark:text-gray-100">Best Sales Products</h2>
+                 <p class="text-m ">Lorem ipsum dolor sit amet.</p>
+             </div>
+ 
+             <div class="lg:grid lg:grid-cols-3 gap-5">
+                <div class="px-3 bg-yellow-400 rounded-lg mb-10 shadow-inner hover:shadow-xl dark:hover:shadow-purlpe transition">
+                    <div class="px-5 relative">
+                        <div class="w-4/6 absolute text-gray-100 lg:mt-[50%] mt-[40%]">
+                            <h1 class="lg:text-lg text-m lg:font-bold font-semibold">Samsung Galaxy Ultra</h1>
+                            <p class="text-sm">Lorem ipsum dolor sit amet </p>
+                        </div>
+                    </div>
+                    <img src="images/head2.png" alt="" class="w-96 lg:h-64 py-3">
+                </div>    
+                <div class="px-3 bg-yellow-400 rounded-lg mb-10 shadow-inner hover:shadow-xl dark:hover:shadow-purlpe  transition">
+                    <div class="px-5 relative">
+                        <div class="w-4/6 absolute text-gray-100 lg:mt-[50%] mt-[40%]">
+                            <h1 class="lg:text-lg text-m lg:font-bold font-semibold">Samsung Galaxy Ultra</h1>
+                            <p class="text-sm">Lorem ipsum dolor sit amet </p>
+                        </div>
+                    </div>
+                    <img src="images/head2.png" alt="" class="w-96 lg:h-64 py-3">
+                </div>   
+                <div class="px-3 bg-yellow-400 rounded-lg mb-10 shadow-inner hover:shadow-xl dark:hover:shadow-purlpe  transition">
+                    <div class="px-5 relative">
+                        <div class="w-4/6 absolute text-gray-100 lg:mt-[50%] mt-[40%]">
+                            <h1 class="lg:text-lg text-m lg:font-bold font-semibold">Samsung Galaxy Ultra</h1>
+                            <p class="text-sm">Lorem ipsum dolor sit amet </p>
+                        </div>
+                    </div>
+                    <img src="images/head2.png" alt="" class="w-96 lg:h-64 py-3">
+                </div>   
+                <div class="px-3 bg-yellow-400 rounded-lg mb-10 shadow-inner hover:shadow-xl dark:hover:shadow-purlpe  transition">
+                    <div class="px-5 relative">
+                        <div class="w-4/6 absolute text-gray-100 lg:mt-[50%] mt-[40%]">
+                            <h1 class="lg:text-lg text-m lg:font-bold font-semibold">Samsung Galaxy Ultra</h1>
+                            <p class="text-sm">Lorem ipsum dolor sit amet </p>
+                        </div>
+                    </div>
+                    <img src="images/head2.png" alt="" class="w-96 lg:h-64 py-3">
+                </div>    
+                <div class="px3 bg-yellow-400 rounded-lg mb-10 shadow-inner hover:shadow-xl dark:hover:shadow-purlpe  transition">
+                    <div class="px-5 relative">
+                        <div class="w-4/6 absolute text-gray-100 lg:mt-[50%] mt-[40%]">
+                            <h1 class="lg:text-lg text-m lg:font-bold font-semibold">Samsung Galaxy Ultra</h1>
+                            <p class="text-sm">Lorem ipsum dolor sit amet </p>
+                        </div>
+                    </div>
+                    <img src="images/head2.png" alt="" class="w-96 lg:h-64 py-3">
+                </div>   
+                <div class="px-3 bg-yellow-400 rounded-lg mb-10 shadow-inner hover:shadow-xl dark:hover:shadow-purlpe  transition">
+                    <div class="px-5 relative">
+                        <div class="w-4/6 absolute text-gray-100 lg:mt-[50%] mt-[40%]">
+                            <h1 class="lg:text-lg text-m lg:font-bold font-semibold">Samsung Galaxy Ultra</h1>
+                            <p class="text-sm">Lorem ipsum dolor sit amet </p>
+                        </div>
+                    </div>
+                    <img src="images/head2.png" alt="" class="w-96 lg:h-64 py-3">
+                </div>                    
+             </div>
+         </div>
+ 
+         <!-- News -->
+ 
+         <div class="mb-10 mt-20 px-5 lg:px-10 anim">
+             <div class="text-gray-700 text-center mb-10">
+                 <h2 class="text-xl font-bold dark:text-gray-100">Recent News</h2>
+                 <p class="text-lg text-gray-600 dark:text-gray-100">There are many variation passages</p>
+             </div>
+             <!-- Passages -->
+             <div class="lg:grid lg:grid-cols-3 gap-4">
+                 <div class="rounded-lg border mb-5 shadow-md hover:shadow-lg dark:hover:shadow-purlpe bg-slate-200 dark:bg-gray-800">
+                     <div class="flex justify-center ">
+                         <img src="images/247.jpeg" alt="" class="lg:w-80 w-96 h-44 object-fill rounded-t-lg">
+                     </div> 
+                     <div class="space-y-1 px-3 mt-5 py-5">
+                         <p class="text-m text-gray-500 dark:text-gray-100">October 5,2024 by Yhoung</p>
+                         <h2 class="text-lg font-bold text-gray-800 dark:text-gray-100">How to choose perfect gadgets</h2>
+                         <p class="text-gray-600 text-m dark:text-gray-100">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quaerat fuga in repellat ut.</p>
+                     </div>
+                 </div>
+                 <div class="rounded-lg border mb-5 shadow-md hover:shadow-lg dark:hover:shadow-purlpe bg-slate-200 dark:bg-gray-800">
+                     <div class="flex justify-center">
+                         <img src="images/Secure from Cyber attacks.jpeg" alt="" class="lg:w-80 w-96 h-44 object-fill rounded-t-lg">
+                     </div>
+                     <div class="space-y-1 px-3 mt-5 py-5">
+                         <p class="text-m text-gray-500 dark:text-gray-100">September 5,2024 by Yhoung</p>
+                         <h2 class="text-lg font-bold text-gray-800 dark:text-gray-100">How to Secure from Cyber attacks<h2>
+                         <p class="text-gray-600 text-m dark:text-gray-100">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quaerat fuga in repellat ut.</p>
+                     </div>
+                 </div>
+                 <div class="rounded-lg border mb-5 shadow-md hover:shadow-lg dark:hover:shadow-purlpe bg-slate-200 dark:bg-gray-800">
+                     <div class="flex justify-center">
+                         <img src="images/download (2).jpeg" alt="" class="lg:w-80 w-96 h-44 object-fill rounded-t-lg">
+                     </div>
+                     <div class="space-y-1 px-3 mt-5 py-5">
+                         <p class="text-m text-gray-500 dark:text-gray-100">October 5,2024 by Yhoung</p>
+                         <h2 class="text-lg font-bold text-gray-800 dark:text-gray-100">How to make the right decisions on your order</h2>
+                         <p class="text-gray-600 text-m dark:text-gray-100">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quaerat fuga in repellat ut.</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     
+    </section>
+        <script class="">
+         var swiper = new Swiper(".mySwiper", {
+             slidesPerView: 2,
+             spaceBetween: 30,
+             pagination: {
+                 el: ".swiper-pagination",
+                 clickable: true,
+             },
+             autoplay: {
+                 delay: 5000,
+                 disableOnInteraction: false,
+             },
+         });
+        </script>
+ 
+     <!-- Footer1 -->
+     <div class="px-10 bg-gray-200 py-5 dark:bg-gray-800 dark:shadow-neon ">
+             <div class="flex justify-between items-center flex-col-reverse lg:flex-row space-y-4 ">
+                 <div class="flex justify-center lg:justify-left lg:block">
+                     <p class="lg:w-4/12 w-4/5  text-gray-600 text-m font-medium dark:text-gray-100">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus reiciendis, excepturi iste quae at.</p>
+                 </div>
+                 <div class="flex lg:-ml-[40%] space-x-3 text-xl text-gray-600 dark:text-gray-100">
+                     <a href="#"><i class="bi bi-instagram"></i></a>
+                     <a href="#"><i class="bi bi-linkedin"></i></a>
+                     <a href="#"><i class="bi bi-facebook"></i></a>
+                     <a href="#"><i class="bi bi-twitter"></i></a>
+                 </div>
+                 <div>
+                     <ul class="text-center lg:text-left text-gray-600 text-m font-medium space-y-1 py-2 dark:text-gray-100">
+                         <li><i class="bi bi-telephone mr-3"></i>+233 (0) 55 305 0084</li>
+                         <li><i class="bi bi-calendar-event mr-3"></i>Working Days: Monday - Friday</li>
+                         <li><i class="bi bi-clock mr-3"></i>Working Time: 8:00AM - 8PM GMT</li>
+                         <li><i class="bi bi-pin-map mr-3"></i>KUMASI - TANASO</li>
+                     </ul>
+                 </div>
+                 <div class="space-y-3">
+                     <h2 class="text-lg text-gray-600 font-semibold lg:text-left text-center dark:text-gray-100">For latest News & Updates</h2>
+                     <div class="email py-1 from-pink-400 rounded-full">
+                         <a href="#">
+                             <input type="text" class="outline-none bg-transparent text-gray-600 dark:text-gray-100 px-2" placeholder="Enter your Email....">
+                             <button class="lg:text-lg text-sm text-gray-200 bg-red-500 lg:font-semibold lg:px-2 lg:py-1 py-1 px-1 rounded-full lg:ml-20 mr-[5px] hover:shadow-inner hover:bg-transparent hover:text-indigo-500 transition">Subscribe</button>
+                         </a>
+                     </div>
+                 </div>
+             </div>
+     </div>
+     
+     <!-- Footer -->
+     <footer class="bg-gray-100 py-5 px-10 dark:bg-gray-800 dark:shadow-purlpe">
+         <div class="container mx-auto flex items-center justify-between">
+             <h1 class="text-3xl font-bold text-gray-700 dark:text-gray-100 "> 📱iCaly</h1>
+             <div class="flex ">
+                 <ul class="flex text-gray-600 flex-col lg:flex-row dark:text-gray-100">
+                     <li class="mx-3 hover:underline transition-all">
+                         <a href="#">About</a>
+                     </li>
+                     <li class="mx-3 hover:underline transition-all">
+                         <a href="#">Contact</a>
+                     </li>
+                     <li class="mx-3 hover:underline transition-all">
+                         <a href="#">Terms & Conditions</a>
+                     </li>
+                     <li class="mx-3 hover:underline transition-all">
+                         <a href="#">Privacy Policy</a>
+                     </li>
+                 </ul>
+             </div>
+             <a href="index.html">
+                 <i class="bi bi-chevron-double-up text-lg text-gray-700 hover:bg-blue-500 hover:text-gray-200 rounded-lg transition px-2 py-2 dark:text-gray-200"></i>
+             </a>
+         </div>
+     </footer> 
+
+     <!-- DarkMode -->
+     <script>
+        const checkbox = document.querySelector('#toggle')
+        const html = document.querySelector('html');
+
+        const toggleDarkMode = function(){
+            checkbox.checked
+            ? html.classList.add("dark")
+            : html.classList.remove("dark");
+        }
+
+        toggleDarkMode();
+        checkbox.addEventListener("click", toggleDarkMode);
+     </script>
+</body>
+</html>

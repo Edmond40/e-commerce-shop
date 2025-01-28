@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/output.css">
+    <title>Document</title>
+</head>
+<body class="bg-gray-800 text-gray-100">
+    <nav class="bg-gray-900 p-4 mb-6">
+        <div class="container max-w-6xl mx-auto flex sm:flex-row gap-8 items-center justify-between">
+            <!-- Searc Area -->
+            <div class="relative w-full">
+                <i class="bi bi-search absolute left-2 top-2"></i>
+                <input type="text" id="search" class="bg-gray-700 rounded-full p-2 pl-10 focus:w-full" placeholder="Search Products....">
+            </div> 
+
+            <!-- Cart Icon -->
+             <div class="relative">
+                <i class="bi bi-cart-plus text-5xl" id="search"></i>
+                <span class="text-2xl absolute -top-3 right-0 bg-red-600 rounded-sm px-1 text-white text-center font-bold" id="cart-count">0</span>
+             </div>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <main class="main flex flex-col md:flex-row mx-auto conatiner max-x-6xl">
+        <div class="spacey-4 p-2 w-full max-w-[10rem]">
+            <h2 class="text-2xl">Filters</h2>
+            <h2 class="text-xl">Categories</h2>
+            <div id="filter-container" class="text-xl space-y-2">
+                <div>
+                    <input type="checkbox" id="cameras" class="check">
+                    <label for="cameras">Cameras</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="phones" class="check">
+                    <label for="phones">Phones</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="drones" class="check">
+                    <label for="drones">Drones</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="laptops" class="check">
+                    <label for="laptops">Laptops</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="watches" class="check">
+                    <label for="watches">Watches</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="headsets" class="check">
+                    <label for="headsets">Headsets<label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Wrapper -->
+
+        <div id="products-wrapper" class="w-full max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-6 place-content-center p-4">
+            <!-- Item1 -->
+            <!-- <div class="item space-y-2">
+                <div class="bg-gray-100 flex justify-center relative overflow-hidden group cursor-pointer border rounded-xl shadow-md  group">
+                    <img src="images/camera.jpg" alt="" class="w-full lg:h-64 h-72 object-cover">
+                    <button class="status bg-black text-gray-100 absolute left-0 right-0 bottom-0 text-center py-2 translate-x-full transition duration-500 group-hover:translate-x-0">Add To Cart</button>
+                </div>
+                <p class="uppercase">Cameras</p>
+                <strong>$499.00</strong>
+            </div> -->
+
+            <!-- Item2 -->
+            <!-- <div class="item space-y-2">
+                <div class="bg-gray-100 flex justify-center relative overflow-hidden group cursor-pointer border rounded-xl shadow-md  group">
+                    <img src="images/phone9.jpeg" alt="" class="w-full lg:h-64 h-72 object-cover">
+                    <button class="bg-black text-gray-100 absolute left-0 right-0 bottom-0 text-center py-2 translate-x-full transition duration-500 group-hover:translate-x-0">Add To Cart</button>
+                </div>
+                <p class="uppercase">Samsung Galaxy Ultra</p>
+                <strong>$799.00</strong>
+            </div> -->
+
+            <!-- Item3 -->
+            <!-- <div class="item space-y-2">
+                <div class="bg-gray-100 flex justify-center relative overflow-hidden group cursor-pointer border rounded-xl shadow-md  group">
+                    <img src="images/drone2.jpeg" alt="" class="w-full lg:h-64 h-72   object-cover">
+                    <button class="bg-black text-gray-100 absolute left-0 right-0 bottom-0 text-center py-2 translate-x-full transition duration-500 group-hover:translate-x-0">Add To Cart</button>
+                </div>
+                <p class="uppercase">Drone</p>
+                <strong>$1299.00</strong>
+            </div> -->
+
+            <!-- Item4 -->
+            <!-- <div class="item space-y-2">
+                <div class="bg-gray-100 flex justify-center relative overflow-hidden group cursor-pointer border rounded-xl shadow-md  group">
+                    <img src="images/laptop3.jpeg" alt="" class="w-full lg:h-64 h-72  object-cover">
+                    <button class="bg-black text-gray-100 absolute left-0 right-0 bottom-0 text-center py-2 translate-x-full transition duration-500 group-hover:translate-x-0">Add To Cart</button>
+                </div>
+                <p class="uppercase">HP Elite i7</p>
+                <strong>$2099.00</strong>
+            </div> -->
+        </div>
+    </main> 
+
+    <script src="/dist/HTML files/Js files/app.js"></script>
+</body>
+</html>

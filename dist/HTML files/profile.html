@@ -1,0 +1,235 @@
+<?php
+    session_start();
+
+    include "db_profile.php";
+    if(!isset($_SESSION["valid"])){
+        header("location: userlogins.php");
+    }
+
+?>
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link href="/src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="/iCarlyLogins/dist/styleCss/stylee.css">
+    <title>Profile</title>
+</head>
+<body class="bg-slate-100 dark:bg-gray-800 dark:text-gray-800 transition ease-in-out">
+    <header class="flex justify-between items-center py-2 text-gray-700 lg:px-10 px-5 bg-gray-100 z-10  fixed w-full top-0 mb-20 dark:bg-gray-700 dark:shadow-neon shadow-md">
+        <h1 class="lg:text-4xl font-bold  dark:text-gray-100">📱  iCarly</h1>
+
+        <div class="bg-gray-200 lg:flex items-center gap-5 hidden md:block text-lg font-bold dark:bg-gray-600 dark:text-gray-100 py-1 px-2 rounded-lg">
+            <i class="bi bi-search "></i>
+            <input type="search" name="search" id="" class="bg-transparent">
+        </div>
+        
+        <div class="lg:flex justify-between items-center  gap-5 hidden md:block text-lg font-bold dark:text-gray-100">
+            <a href="#">
+                <i class="bi bi-globe-americas"></i>
+            </a>
+
+            <a href="#">
+                <i class="bi bi-chat-square-heart"></i>
+            </a>   
+
+            <a href="#">
+                <i class="bi bi-bell"></i>
+            </a>
+        </div>         
+
+        <!--DarkMode  -->
+        <div class="flex items-center">
+            <div class="flex items-center">
+               <input type="checkbox" id="toggle" class="hidden">
+                <label for="toggle" class="cursor-pointer">
+                    <div class="w-9 h-5 flex items-center bg-gray-200 shadow-md rounded-full p-1 m-2 dark:bg-gray-600 dark:shadow-neon">
+                    <div class="toggle-dot w-4 h-4 rounded-full bg-gray-100 shadow-lg transform duration-500 ease-in-out "></div>
+                    </div>
+                </label>
+          
+            </div>
+        </div>
+
+        <!-- Edit Profile -->
+        <div class="flex gap-3 items-center">
+            <?php
+                $id = $_SESSION['id'];
+                $query = mysqli_query($connect, "SELECT * FROM user_profile WHERE Id = $id");
+
+                while($result = mysqli_fetch_assoc($query)){
+                    $res_Uname = $result['user'];
+                    $res_Email = $result['email'];
+                    $id = $result['id'];
+
+                    echo" <a href='edit.php'>
+                            <p class='font-semibold text-gray-700 dark:text-gray-100 hover:underline hover:text-gray-400 cursor-pointer hover:scale-[1.1] duration-500'>Edit Profile</p>
+                          </a>";
+                }
+
+            ?>
+         
+            <div class="cursor-pointer group">
+                <p class="text-xl font-semibold dark:shadow-neon py-1 px-2 rounded-lg shadow-md dark:text-gray-100" onclick="openBtn()"><?php echo $res_Uname ?></p>
+            </div>
+        </div>
+        
+    </header>
+
+    <section class="lg:grid grid-cols-3 mt-5 gap-2">
+        <!-- User SideBar -->
+        <div class="lg:w-20 mt-2">
+            <aside class="side lg:w-72 px-3 py-4 fixed  dark:bg-gray-700 dark:text-gray-100  dark:border-none shadow-md overflow-scroll">
+                <div class="h-screen flex flex-col items-center">
+                    <p class="text-xl font-semibold dark:shadow-neon shadow-lg py-3 px-2">Hello <span ><?php echo $res_Uname ?></span></p>
+                    <hr> 
+                    <div class="flex flex-col gap-4 mt-4 font-medium">
+                        <div class="hover:scale-[1.1] duration-300">
+                            <a href="#" class="flex gap-2 ">
+                                <i class="bi bi-journal-check text-xl"></i>
+                                <p>Orders</p>
+                            </a>
+                        </div>
+
+                        <div class="hover:scale-[1.1] duration-300">
+                            <a href="#" class="flex gap-2 ">
+                                <i class="bi bi-chat-left text-xl"></i>
+                                <p>Messages</p>
+                            </a>
+                        </div>
+
+                        <div class="hover:scale-[1.1] duration-300">
+                            <a href="#" class="flex gap-2 ">
+                                <i class="bi bi-shield-lock text-xl"></i>
+                                <p>Privacy & Security</p>
+                            </a>
+                        </div>
+
+                        <div class="hover:scale-[1.1] duration-300">
+                            <a href="#" class="flex gap-2 ">
+                                <i class="bi bi-patch-question text-xl"></i>
+                                <p>T & C</p>
+                            </a>
+                        </div>
+
+                        <div class="hover:scale-[1.1] duration-300">
+                            <a href="#" class="flex gap-2 ">
+                                <i class="bi bi-gear text-xl"></i>
+                                <p>Settings</p>
+                            </a>
+                        </div>
+
+                        <div class="hover:scale-[1.1] duration-300">
+                            <a href="#" class="flex gap-2 ">
+                                <i class="bi bi-star text-xl"></i>
+                                <p>Watchlist</p>
+                            </a>
+                        </div>
+
+                        <div class="hover:scale-[1.1] duration-300">
+                            <a href="logout.php" class="flex gap-2 mt-3">
+                                <i class="bi bi-door-open text-xl"></i>
+                                <p class="">Logout</p>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Main -->
+        <div class="mt-4 -ml-28 px-2">
+            <div class="flex flex-col gap-3">
+                <div class="relative shadow-lg py-3 px-2 rounded-lg dark:bg-gray-700">
+                    <div class="dark:text-gray-100 ">
+                        <p class="mt-10 text-xl font-semibold">Hello <span name=""><?php echo $res_Uname ?></span>, Welcome to iCarly </p>
+                    </div>
+                    <div>
+                        <p class="text-gray-700 dark:text-gray-100 text-xl font-semibold">Email: <?php echo $res_Email ?></p>
+                    </div>
+                </div> 
+   
+                <div class="shadow-lg py-3 px-2 rounded-lg dark:bg-gray-700">
+                    <div>
+                        <p class="text-gray-700 dark:text-gray-100 mt-4 text-xl font-semibold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, perspiciatis!</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <!-- Account -->
+        <div class="px-3">
+            <div class="mt-4 shadow-lg py-3 px-2 rounded-lg dark:bg-gray-700 mb-5">
+                <div class="flex justify-between py-2 px-1 text-gray-700 dark:text-gray-100 font-bold text-xl">
+                    <p>Payment Method</p>
+                    <i class="bi bi-pencil-square "></i>
+                </div>
+                <img src="/dist/HTML files/images/HE4.jpeg" class="w-full h-60 rounded-lg" alt="">
+                <div>
+                    <div class="text-gray-700 dark:text-gray-100 flex justify-between py-2 px-1 font-medium">
+                        <h2>Card Type</h2>
+                        <p class="text-gray-600 dark:text-gray-100">VISA</p>
+                    </div>
+    
+                    <div class="text-gray-700 dark:text-gray-100 flex justify-between py-2 px-1 font-medium">
+                        <h2>Card Holder</h2>
+                        <p class="text-gray-600 dark:text-gray-100">Mark Adderson</p>
+                    </div>
+    
+                    <div class="text-gray-700 dark:text-gray-100 flex justify-between py-2 px-1 font-medium">
+                        <h2>Expire</h2>
+                        <p class="text-gray-600 dark:text-gray-100">12/31</p>
+                    </div>
+    
+                    <div class="text-gray-700 dark:text-gray-100 flex justify-between py-2 px-1 font-medium">
+                        <h2>Card Number</h2>
+                        <p class="text-gray-600 dark:text-gray-100">0123 4567 8910 1112</p>
+                    </div>
+    
+                    <div class="text-gray-700 dark:text-gray-100 flex justify-between py-2 px-1 font-medium">
+                        <h2>Balance</h2>
+                        <p class="text-gray-600 dark:text-gray-100">$13,000,000</p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    <!-- DarkMode -->
+    <script>
+        const checkbox = document.querySelector('#toggle')
+        const html = document.querySelector('html');
+
+        const toggleDarkMode = function(){
+            checkbox.checked
+            ? html.classList.add("dark")
+            : html.classList.remove("dark");
+        }
+
+        toggleDarkMode();
+        checkbox.addEventListener("click", toggleDarkMode);
+    </script>
+</body>
+</html>

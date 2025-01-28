@@ -1,0 +1,40 @@
+[
+    {
+        "id": 1,
+        "title": "Product name 1",
+        "price": 50,
+        "image": "images/drone1.jpeg"
+
+    },
+    {
+        "id": 2,
+        "title": "Product name 2", 
+        "price": 100,
+        "image": "images/can.jpeg"
+    },
+    {
+        "id": 3,
+        "title": "Product name 3",
+        "price": 150,
+        "image": "images/HE8.jpeg"
+    },
+    {
+        "id": 4,
+        "title": "Product name 4",
+        "price": 70,
+        "image": "images/glas.jpeg"
+    },
+    {
+        "id": 5,
+        "title": "Product name 5",
+        "price": 270,
+        "image": "images/IPHONE.jpeg"
+    },
+    {
+        "id": 4,
+        "title": "Product name 6",
+        "price": 300,
+        "image": "images/house1.jpeg"
+    }
+
+]

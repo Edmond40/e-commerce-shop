@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/output.css">
+    <title>Document</title>
+</head>
+<body class="bg-blue-100 dark:bg-gray-800 transition ease-in-out">
+    <!-- header -->
+    <header class="flex justify-between items-center px-5 py-4 h-30 border-b shadow-md bg-gray-100 dark:bg-gray-700 dark:shadow-neon">
+        <a href="index.html">
+            <h1 class="text-3xl font-bold text-gray-700 flex dark:text-gray-100"> 📱iCaly</h1>
+        </a>
+        
+        <nav class="px-5 text-center text-m text-gray-600 dark:text-gray-100">
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Phones</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Headphones</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Router Wifi</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Chargers</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Power Banks</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Digital Cameras</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Hard Drives</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Series Watches</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Bluetooth Speaker</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Flash Drives</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Tablets</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Memory Cards</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Phones Covers</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Cables</a>
+            <a href="#" class="cursor-pointer hover:bg-blue-400 hover:text-gray-100 py-1 px-1 rounded-md transition">Laptops</a>
+        </nav>
+        <div class="flex space-x-6 items-center  md:flex">
+            <a href="#" class="font-bold text-2xl text-gray-700 dark:text-gray-200"><i class="bi-cart-plus"></i></a> 
+            <a href="#" class="lg:flex sm:hidden openprofile">
+                <img src="images/Drone1.jpeg" class="box1 rounded-full object-fill" width="80"  alt="">
+            </a>
+        </div>  
+        <!-- DarkMode -->
+        <div class="flex items-center"></div>
+            <div class="flex items-center">
+               <input type="checkbox" id="toggle" class="hidden">
+                <label for="toggle" class="cursor-pointer">
+                    <div class="w-9 h-5 flex items-center bg-gray-200 shadow-md rounded-full p-1 m-2 dark:bg-gray-600">
+                    <div class="toggle-dot w-4 h-4 rounded-full bg-gray-100 shadow-md transform duration-500 ease-in-out"></div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <!-- Collapse -->
+    <div class="profile bg-blue-400 absolute right-5   delay-75  py-2 box2">
+        <ul class="space-y-2 px-10 duration-200">
+            <li class="text-gray-200 font-semibold"><a href="#">Team1</a></li>
+            <li class="text-gray-200 font-semibold"><a href="#">Team1</a></li>
+            <li class="text-gray-200 font-semibold"><a href="#">Team1</a></li>
+            <li class="text-gray-200 font-semibold"><a href="#">Team1</a></li>
+        </ul>
+    </div>
+    <script>
+        let box1 = document.querySelector('.box1');
+        let box2 = document.querySelector('.box2');
+
+        box2.style.display = 'none';
+
+        box1.onclick  = function(){
+            if(box2.style.display == 'block'){
+                box2.style.display = 'none';
+            }else{
+                box2.style.display = 'block';
+            }
+        }
+
+    </script>
+
+    <!-- Content -->
+    <section class="md:px-20 px-5 lg:px-20 mb-10 md:mb-0">
+        <div class="lg:grid lg:grid-cols-3 mt-6">
+            <div class="">
+                <img src="images/camera3.jpeg" alt="" class="w-96 h-96 object-fill rounded-lg" id="image2">
+            </div>
+            <div class="w-[96px] lg:ml-20 md:ml-10 ml-6 mt-5 flex  lg:block gap-x-3 mb-5 lg:mb-0">
+                <img src="images/camera3.jpeg" alt="" class="w-full h-20 rounded-md mb-2 object-fill hover:shadow-lg hover:grayscale image">
+                <img src="images/camera.jpg" alt="" class="w-full h-20 rounded-md mb-2 object-fill hover:shadow-lg hover:grayscale image">
+                <img src="images/CanonRF.jpeg" alt="" class="w-full h-20 rounded-md mb-2 object-fill hover:shadow-lg hover:grayscale image">
+                <img src="images/can.jpeg" alt="" class="w-full h-20 rounded-md mb-2 object-fill hover:shadow-lg hover:grayscale image">
+            </div>
+            <div class="lg:mt-10 space-y-3 lg:-ml-20 w-4/5">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-600 dark:text-gray-200">Top <span class="before:absolute before:block before:-skew-y-3 before:-inset-1 inline-block before:bg-pink-400 text-gray-100  relative"><span class="relative text-gray-100">10 Best Cameras</span></span> for Everyone
+                    </h2>
+                    <p class="text-gray-700 lg:mb-10 dark:text-gray-400">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed ipsum at ipsum tempor dignissim
+                    </p>
+                </div>
+                <div class="">
+                    <a href="#" class="text-gray-600  text-3xl hover:text-gray-200 flex items-center gap-x-3 px-1 hover:bg-orange-500 transition-all w-40 py-2 cursor-pointer rounded-md dark:text-gray-100">
+                        <i class="bi bi-cart3"></i>
+                        <p class="text-lg font-mono font-semibold text-gray-700 hover:text-gray-200 dark:text-gray-300">Add to Cart</p>
+                    </a>
+                </div>
+                <div class="md:px-10 lg:px-10 ">
+                    <div class="flex bg-gray-100 w-4/5 justify-between px-5 text-lg rounded-md lg:-ml-10">
+                        <p class=" text-2xl cursor-pointer text-gray-700" id="plus">+</p>
+                        <input type="number" min="0" value="0" max="10" id="input" class="py-1 outline-none bg-transparent text-center text-gray-700">
+                        <p class="text-3xl cursor-pointer text-gray-700" id="minus">-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart -->
+        <script>
+            const input = document.querySelector('#input')
+            const minus = document.querySelector('#minus')
+            const plus = document.querySelector('#plus')
+            
+            let a = 1;
+    
+            plus.addEventListener('click', () => {
+                a ++;
+                a = ( a < 10 ) ? a : 10;
+                input.value = a;
+    
+            })
+            minus.addEventListener('click', () => {
+                if( a > 1){
+                    a --;
+                    a = ( a < 10 ) ? a : 10;
+                    input.value = a;   
+                }
+            })
+        </script>
+
+        <!-- DarkMode -->
+         <script>
+            const checkbox = document.querySelector('#toggle')
+            const html = document.querySelector('html');
+
+            const toggleDarkMode = function(){
+                checkbox.checked
+                ? html.classList.add("dark")
+                : html.classList.remove("dark");
+            }
+
+            toggleDarkMode();
+            checkbox.addEventListener("click", toggleDarkMode);
+         </script>
+
+        <!-- Image -->
+        <script>
+            const images = document.querySelectorAll('.image');
+            const mainImage = document.querySelector('#image2');
+        
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    mainImage.src = image.src;
+                });
+            });
+        </script>
+    </section>
+</body>
+</html>

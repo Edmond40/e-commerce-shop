@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Product 1",
+        "image": "images/house 11.jpeg",
+        "price": 1499.00
+    },
+    {
+        "id": 2,
+        "name": "Product 2",
+        "image": "images/house3.jpeg",
+        "price": 2799.00
+    },
+    {
+        "id": 3,
+        "name": "Product 3",
+        "image": "images/house2.jpeg",
+        "price": 5099.00
+    },
+    {
+        "id": 4,
+        "name": "Product 4",
+        "image": "images/house5.jpeg",
+        "price": 1599.00
+    },
+    {
+        "id": 5,
+        "name": "Product 5",
+        "image": "images/house4.jpeg",
+        "price": 3499.00
+    },
+    {
+        "id": 6,
+        "name": "Product 6",
+        "image": "images/house7.jpeg",
+        "price": 4299.00
+    },
+    {
+        "id": 7,
+        "name": "Product 7",
+        "image": "images/house6.jpeg",
+        "price": 2199.00
+    },
+    {
+        "id": 8,
+        "name": "Product 8",
+        "image": "images/house7.jpeg",
+        "price": 4299.00
+    },
+    {
+        "id": 9,
+        "name": "Product 9",
+        "image": "images/house8.jpeg",
+        "price": 12099.00
+    },
+    {
+        "id": 10,
+        "name": "Product 10",
+        "image": "images/house10.jpeg",
+        "price": 20099.00
+    }
+]
